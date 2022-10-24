@@ -21,7 +21,7 @@ export const ItemWrapper = styled.div`
         width: 100%;
         height: 100%;
         @apply cursor-pointer;
-
+        object-fit: cover;
       }
     }
     .desc {

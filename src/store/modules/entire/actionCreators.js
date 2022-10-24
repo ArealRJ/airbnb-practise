@@ -22,14 +22,25 @@ export function changeTotalCountAction(totalCount) {
   };
 }
 
+export function changeIsLoadingAction(isLoading) {
+  return {
+    type: actionTypes.CHANGE_IS_LOADING,
+    isLoading,
+  };
+}
+
 export const fetchRoomListAction = (page = 0) => {
   return async (dispatch) => {
+    // 回到顶部
+    window.scrollTo(0, 0);
     // 0.更新当前页码
     dispatch(changeCurrentPageAction(page));
-    
+
     // 1. 发送网络请求
     // const currentPage = getState().entire.currentPage;
+    dispatch(changeIsLoadingAction(true));
     const res = await getEntireRoomList(page * 20);
+    dispatch(changeIsLoadingAction(false));
 
     const roomList = res.list;
     const totalCount = res.totalCount;
