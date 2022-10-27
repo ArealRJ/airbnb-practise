@@ -25,7 +25,7 @@ const EntireFilter = memo((props) => {
             className={classNames("filter-item", {
               active: selectItems.includes(item),
             })}
-            key={item}
+            key={index}
             onClick={(e) => itemClickHandle(item)}
           >
             {item}

@@ -21,8 +21,8 @@ const ScrollView = memo((props) => {
 
   function controlClickHandle(isRight) {
     const newIndex = isRight ? posIndex + 1 : posIndex - 1;
-    const currentLeftEl = scrollContentRef.current.children[newIndex];
-    const scrollDistance = currentLeftEl.offsetLeft;
+    const currentLeftEl = scrollContentRef.current.children[newIndex];  // 当前元素
+    const scrollDistance = currentLeftEl.offsetLeft; // 当前元素的左边距，即滚动距离
     scrollContentRef.current.style.transform = `translateX(-${scrollDistance}px)`;
     setPosIndex(newIndex);
     setRightBtnShow(totalDistanceRef.current > scrollDistance); // 当前滚动距离小于总距离时，显示右侧按钮
