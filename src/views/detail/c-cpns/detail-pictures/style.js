@@ -1,9 +1,10 @@
 import styled from "styled-components";
 
 export const PicturesWrapper = styled.div`
+position: relative;
   > .pictures {
     display: flex;
-    height: 600px;
+    height: 800px;
     background-color: #000;
     
     &:hover {
@@ -67,5 +68,16 @@ export const PicturesWrapper = styled.div`
       box-sizing: border-box;
       border: 1px solid #000;
     }
+  }
+
+
+  .show-btn {
+    position: absolute;
+    bottom: 20px;
+    right: 40px;
+    /* width: 80px; */
+    /* height: 50px; */
+    background-color: #f0f0f0;
+    border-radius: 6px;
   }
 `;
