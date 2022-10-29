@@ -1,9 +1,15 @@
-import React, { memo } from 'react'
+import React, { memo } from "react";
+import { DetailWrapper } from "./style";
+import DetailPictures from "./c-cpns/detail-pictures/index";
+import DetailInfo from "./c-cpns/detail-info/index";
 
 const Detail = memo(() => {
   return (
-    <div>Detail</div>
-  )
-})
+    <DetailWrapper>
+      <DetailPictures />
+      <DetailInfo />
+    </DetailWrapper>
+  );
+});
 
-export default Detail
+export default Detail;
