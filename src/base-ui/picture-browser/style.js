@@ -24,6 +24,7 @@ export const BrowserWrapper = styled.div`
   }
 
   .slider {
+    position: relative;
     display: flex;
     flex: 1;
     justify-content: center;
@@ -53,6 +54,7 @@ export const BrowserWrapper = styled.div`
       width: 100%;
       overflow: hidden;
       max-width: 105vh;
+      /* max-height: 850px; */
       img {
         position: absolute;
         top: 0;
@@ -83,6 +85,50 @@ export const BrowserWrapper = styled.div`
   }
 
   .preview {
-    height: 100px;
+    display: flex;
+    justify-content: center;
+    height: 120px;
+    color: #fff;
+    position: relative;
+    top: 10px;
+    margin-bottom: 200px;
+    .info {
+      position: absolute;
+      max-width: 110vh;
+      bottom: 10px;
+      .desc {
+        display: flex;
+        justify-content: space-between;
+        .show-list {
+          display: flex;
+          align-items: center;
+        }
+      }
+      .list {
+        margin-top: 20px;
+
+        
+        .item {
+          width: 100px;
+          margin: 0 5px;
+          position: relative;
+          height: ${(props) => (props.showList ? "67px" : "0")};
+          transition: height 200ms ease;
+          &:hover {
+            cursor: pointer;
+          }
+          img {
+            width: 100%;
+            height: 100%;
+            opacity: 0.5;
+          }
+          &.active {
+            img {
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
   }
 `;

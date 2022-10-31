@@ -8,23 +8,23 @@ import IconLeftArrow from "@/assets/svg/icon-left-arrow.";
 import IconRightArrow from "@/assets/svg/icon-right-arrow";
 import classNames from "classnames";
 import Indicator from "@/base-ui/indicator";
-import throttle from "@/utils/throttle";
 
 const RoomItem = memo((props) => {
   const { itemData, itemWidth = "25%", itemClick } = props;
   const [selectIndex, setSelectIndex] = useState(0);
   const sliderRef = useRef();
 
-  function toggleItemClick(isRight = true) {
+  function toggleItemClick(e,isRight = true) {
     isRight ? sliderRef.current.next() : sliderRef.current.prev();
     let newIndex = isRight ? selectIndex + 1 : selectIndex - 1;
     if (newIndex < 0) newIndex = itemData.picture_urls.length - 1;
     if (newIndex >= itemData.picture_urls.length) newIndex = 0;
     setSelectIndex(newIndex);
+    // 阻止事件冒泡，防止跳转到详情页
+    e.stopPropagation();  
   }
 
   // 节流
-  const throttleToggleItemClick = throttle(toggleItemClick, 300);
 
   function itemClickHandle() {
     if (itemClick) itemClick(itemData);
@@ -42,13 +42,13 @@ const RoomItem = memo((props) => {
       <div className="control">
         <div
           className="btn left"
-          onClick={(e) => throttleToggleItemClick(false)}
+          onClick={(e) => toggleItemClick(e,false)}
         >
           <IconLeftArrow width={25} height={25} />
         </div>
         <div
           className="btn right"
-          onClick={(e) => throttleToggleItemClick(true)}
+          onClick={(e) => toggleItemClick(e,true)}
         >
           <IconRightArrow width={25} height={25} />
         </div>

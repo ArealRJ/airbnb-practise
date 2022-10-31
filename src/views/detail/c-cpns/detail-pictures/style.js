@@ -4,7 +4,7 @@ export const PicturesWrapper = styled.div`
 position: relative;
   > .pictures {
     display: flex;
-    height: 800px;
+    height: 740px;
     background-color: #000;
     
     &:hover {
@@ -67,6 +67,7 @@ position: relative;
       height: 50%;
       box-sizing: border-box;
       border: 1px solid #000;
+      /* border-bottom: 1px solid #000; */
     }
   }
 

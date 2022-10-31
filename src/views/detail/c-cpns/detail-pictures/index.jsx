@@ -1,8 +1,7 @@
-import PropTypes from "prop-types";
 import React, { memo, useState } from "react";
 import { useSelector } from "react-redux";
 
-import PictureBrowser from "@/base-ui/picture-brower";
+import PictureBrowser from "@/base-ui/picture-browser";
 import { PicturesWrapper } from "./style";
 import { Button } from "antd";
 
@@ -57,6 +56,5 @@ const DetailPictures = memo((props) => {
   );
 });
 
-DetailPictures.propTypes = {};
 
 export default DetailPictures;
