@@ -56,5 +56,4 @@ const DetailPictures = memo((props) => {
   );
 });
 
-
 export default DetailPictures;

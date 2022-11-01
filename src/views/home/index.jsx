@@ -9,6 +9,8 @@ import isEmptyObject from "@/utils/isEmptyObject";
 import { HomeWrapper } from "./style";
 import LongFor from "./c-cpns/home-longfor";
 import HomeSectionV3 from "./c-cpns/home-section-v3";
+import AppHeader from "@/components/app-header";
+import { changeHeaderConfigAction } from "@/store/modules/main";
 
 const Home = memo(() => {
   // redux获取数据
@@ -34,10 +36,12 @@ const Home = memo(() => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchHomeDataAction());
+    dispatch(changeHeaderConfigAction({ isFixed: true }));
   }, [dispatch]);
 
   return (
     <HomeWrapper>
+      <AppHeader />
       <HomeBanner />
       <div className="content">
         {/* 折扣相关 */}

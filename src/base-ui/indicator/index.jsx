@@ -7,7 +7,6 @@ const Indicator = memo((props) => {
   const contentRef = useRef();
 
   useEffect(() => {
-    // console.log(selectIndex);
     // 当前需要移动元素
     const selectItemEl = contentRef.current.children[selectIndex];
     const itemLeft = selectItemEl.offsetLeft;
@@ -17,10 +16,10 @@ const Indicator = memo((props) => {
     const contentScroll = contentRef.current.scrollWidth;
     const totalDistance = contentScroll - contentWidth; // content元素总共可以移动的距离
 
-    let distance = itemLeft + itemWidth * 0.5 - contentWidth * 0.5;
-    // console.log(distance);
-    if (distance < 0) distance = 0;
-    if (distance > totalDistance) distance = totalDistance;
+    let distance = itemLeft + itemWidth * 0.5 - contentWidth * 0.5; // 需要移动的距离
+
+    if (distance < 0) distance = 0;  // 当distance小于0时，移动到0的位置
+    if (distance > totalDistance) distance = totalDistance; // 当distance大于totalDistance时，移动到最大距离的位置
 
     contentRef.current.style.transform = `translate(${-distance}px)`;
   }, [selectIndex]);

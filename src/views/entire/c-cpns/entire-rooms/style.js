@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const RoomsWrapper = styled.div`
   padding: 40px 20px;
   position: relative;
+  margin-top: 118px;
   .title {
     font-size: 22px;
     color: ${(props) => props.theme.textColor.secondaryColor};

@@ -13,6 +13,7 @@ const SectionFooter = memo((props) => {
   const navigate = useNavigate();
   function moreClickHandle() {
     navigate("/entire");
+    window.scrollTo(0, 0)
   }
 
   return (

@@ -11,7 +11,14 @@ export const HeaderWrapper = styled.div`
   font-size: 14px;
   font-weight: 600;
   /* position: fixed; */
-  top: 0;
+  /* top: 0; */
   background-color: #fff;
-  z-index: 1;
+  z-index: 9999999;
+
+  &.isFixed{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
 `
