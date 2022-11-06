@@ -2,8 +2,9 @@ import styled from 'styled-components';
 
 export const LeftWrapper = styled.div`
 flex: 1;
-color: ${props => props.theme.color.primaryColor};
+color: ${props => props.theme.isAlpha ? "#fff": props.theme.color.primaryColor};
 .logo{
+  margin-left: 24px;
   svg{
     cursor: pointer;
   }

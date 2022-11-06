@@ -1,5 +1,5 @@
 import React, { memo, useEffect } from "react";
-import {  useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 
 import { EntireWrapper } from "./style";
 import { fetchRoomListAction } from "@/store/modules/entire/actionCreators";
@@ -14,7 +14,7 @@ const footer = memo(() => {
 
   useEffect(() => {
     dispatch(fetchRoomListAction());
-    dispatch(changeHeaderConfigAction({ isFixed: true }));
+    dispatch(changeHeaderConfigAction({ isFixed: true, topAlpha: false }));
   }, [dispatch]);
 
   return (

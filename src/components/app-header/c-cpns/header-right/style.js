@@ -22,6 +22,7 @@ color: ${props => props.theme.textColor.primaryColor};
       border-radius: 22px;
       cursor: pointer;
       transition: color 250ms ease;
+      color: ${props => props.theme.isAlpha ? "#fff": props.theme.textColor.primaryColor};
       &:hover{
         background-color: #f7f7f7;
       }
@@ -44,10 +45,11 @@ color: ${props => props.theme.textColor.primaryColor};
     padding:5px 5px 5px 12px;
     border-radius: 21px;
     border: 1px solid #DDDDDD;
+    margin-right: 24px;
     box-shadow: none;
     cursor: pointer;
     ${props => props.theme.mixin.boxShadow}
-
+    color: ${props => props.theme.isAlpha ? "#fff": props.theme.textColor.primaryColor};
     &::after {
       position: absolute;
       content: '';

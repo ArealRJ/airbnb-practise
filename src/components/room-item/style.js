@@ -48,7 +48,7 @@ export const ItemWrapper = styled.div`
           left:0;
           right: 0;
           margin: 0 auto;
-          z-index: 9999;
+          z-index: 8;
           .item{
             width: 14.29%;
             display:flex;

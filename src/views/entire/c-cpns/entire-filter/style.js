@@ -8,7 +8,7 @@ export const FilterWrapper = styled.div`
   display: flex;
   align-items: center;
   padding: 0 16px;
-  z-index: 9999999;
+  z-index:9;
   background-color: #fff;
   .filter-item {
     height: 32px;
